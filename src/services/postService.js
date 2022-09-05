@@ -11,11 +11,11 @@ const postsService = {
     return posts;
   },
 
-  // getById: async (id) => {
-  //   const post = await db.BlogPost.findByPk(id, { attributes: { exclude: ['password'] } });
-  //   // const post = await db.post.findOne({ where: { id }, attributes: { exclude: ['password'] } });
-  //   return post;
-  // },
+  getById: async (id) => {
+    const post = await db.BlogPost.findByPk(id, { attributes: { exclude: ['password'] } });
+    // const post = await db.BlogPost.findOne({ where: { id }, attributes: { exclude: ['password'] } });
+    return post;
+  },
 };
 
 module.exports = postsService;
