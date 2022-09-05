@@ -18,7 +18,7 @@ const BlogPost = sequelize.define('BlogPost', {
   userId: {
     type: DataTypes.INTEGER,
     allowNull: false,
-    references: { model: 'Users', key: 'id' }
+    foreignKey: true
   },
   published: {
     type: DataTypes.DATE,
@@ -32,7 +32,7 @@ const BlogPost = sequelize.define('BlogPost', {
 
   BlogPost.associate = (models) => {
     BlogPost.belongsTo(models.User, {
-      as: 'Users',
+      as: 'user',
       foreignKey: 'userId'
     })
   }
